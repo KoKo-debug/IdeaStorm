@@ -1,0 +1,41 @@
+#group-index-main{
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  
+}
+
+#index-left-sidebar-container{
+  background-color: cadetblue;
+  margin: 5px;
+  min-width: 25%;
+}
+
+#ils-panel{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 30px 15px;
+  align-items: center;
+
+}
+
+.ils-panel-item{
+  background-color: gray;
+  margin: 5px 10px 0px 10px;
+  padding: 4px;
+}
+
+
+
+/* ************************************
+        MAIN  
+****************************************/
+
+#index-main-container{
+  background-color: darkseagreen;
+  margin: 5px;
+  width: 100vw;
+}
+
