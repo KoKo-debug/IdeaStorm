@@ -4,6 +4,12 @@
   align-content: center;
 }
 
+.logo-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .session-link-container {
   display: flex;
   align-items: center;
