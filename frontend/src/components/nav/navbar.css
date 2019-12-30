@@ -1,0 +1,31 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.session-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.signup-login {
+  display: flex;
+}
+
+.signup {
+  position: relative;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+  background-color: rgb(22, 233, 215);
+}
+
+.login {
+  text-decoration: none;
+  padding: 5px 15px;
+  color: rgb(22, 233, 215);
+  background-color: white;
+}

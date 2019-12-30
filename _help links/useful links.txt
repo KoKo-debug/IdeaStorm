@@ -1,0 +1,3 @@
+http://jsfiddle.net/ThiefMaster/LPh33/4/
+
+dynamic evenly spaced elements in circle around center
