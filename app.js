@@ -3,9 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require("./conf/keys").mongoURI;
 const users = require("./routes/api/users");
-const User = require("./models/User");
+const groups = require("./routes/api/groups");
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const User = require('./models/User');
+const Group = require('./models/Group');
 
 mongoose
     .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -22,10 +24,33 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
+app.use("/api/groups", groups);
 
 const port = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    User.findOne({ email: 'test001@mail.com' })
+        .then(user => {
+            const newGroup = new Group({
+                name: "test group 001",
+                creator: user,
+                joinCode: "abcd1234"
+            });
+            newGroup.members.push(user);
+            newGroup.save().then(
+                group => {
+                    user.createdGroups.push(group);
+                    user.save().then(user => {
+                        user.populate('createdGroups');
+                        res.json(user);
+                        }
+                    ).catch(err => console.log(err))
+                }
+            ).catch(err => console.log(err))
+        }).catch(err => console.log(err))
+})
+
 app.listen(port, () => {
-    console.log(`Listening to port ${port}`);    
+    console.log(`Listening to port ${port}`);
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './group_index.css';
+import './css/group_index.css';
 import MyGroups from "./mygroups_section";
 
 class GroupIndexMain extends React.Component {

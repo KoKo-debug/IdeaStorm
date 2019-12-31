@@ -2,7 +2,6 @@
   background-color: darkseagreen;
   margin: 5px;
   width: 100vw;
-
   display: flex;
   flex-direction: column;
 }
@@ -14,6 +13,7 @@
   padding: 30px 0px;
 
 }
+
 
 .group-listing-container{
   display: flex;

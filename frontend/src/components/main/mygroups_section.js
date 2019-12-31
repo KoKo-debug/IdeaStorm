@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import GroupListing from "./group_boards";
-import { getUserGroups } from "../../util/groups_util";
-import "./mygroups.css";
+import GroupListing from "./group_listing";
+// import { getUserGroups } from "../../util/groups_util";
+import { fetchUserGroups } from "../../actions/groups_actions";
+import "./css/mygroups.css";
 
 class MyGroupIndex extends React.Component{
   constructor(props){
@@ -23,12 +24,16 @@ class MyGroupIndex extends React.Component{
   }
 
   componentDidMount(){
-    debugger;
-    if(typeof this.props.groups === "undefined"){
-      this.props.getUserGroups(this.props.currentUser.id)
-    }
+    // debugger;
+    // if(typeof this.props.groups === "undefined"){
+    //   this.props.getUserGroups(this.props.currentUser.id)
+    // }
+    
+    this.props.getUserGroups(this.props.currentUser.id)
   }
+
   render(){ 
+    
     if (typeof this.props.groups === "undefined") {
       return null;
     } else {
@@ -59,7 +64,7 @@ const msp = ({entities, session}) => {
 
 const mdp = dispatch => {
   return({
-    getUserGroups: userId => dispatch(getUserGroups(userId))
+    getUserGroups: userId => dispatch(fetchUserGroups(userId))
   })
 }
 
