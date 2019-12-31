@@ -29,8 +29,9 @@ class MyGroupIndex extends React.Component{
   componentDidMount(){  
     if (!this.state.fetched){
       this.props.getUserGroups(this.props.currentUser.id).then(() => 
-        this.setState({fetched: true})
+        this.setState({fetched: true})        
       )
+
     }
     
   }
