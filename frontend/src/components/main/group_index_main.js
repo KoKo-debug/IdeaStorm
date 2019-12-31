@@ -1,6 +1,6 @@
 import React from 'react';
 import './group_index.css';
-import MyGroups from "./index_mygroups";
+import MyGroups from "./mygroups_section";
 
 class GroupIndexMain extends React.Component {
   constructor(props){
@@ -31,7 +31,9 @@ class GroupIndexMain extends React.Component {
 
   renderMainView(){
     if(this.state.joinStatus === "ils-jc-selected"){
-      return <MyGroups />
+      return(
+        <MyGroups />
+      ) 
     } else {
       return null;
     }
