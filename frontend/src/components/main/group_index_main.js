@@ -10,18 +10,17 @@ class GroupIndexMain extends React.Component {
       status: ""
     };
     this.handleClick = this.handleClick.bind(this);
-    this.renderMainView = this.renderMainView.bind(this);
+    // this.renderMainView = this.renderMainView.bind(this);
   }
 
-  renderMainView(){
-    if(this.state.joinStatus === "ils-jc-selected"){
-      return(
-        <MyGroups />
-      ) 
-    } else {
-      return null;
-    }
-  }
+  // renderMainView(){
+  //     return(
+  //       <MyGroups />
+  //     ) 
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   handleClick(field) {
     if (field === "join") {
@@ -66,7 +65,7 @@ class GroupIndexMain extends React.Component {
 
         </section>        
 
-        {this.renderMainView()}
+        <MyGroups />
 
       </div>
     );
