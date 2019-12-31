@@ -83,6 +83,8 @@ input[type=password]:focus {
     width: 323px;
 }
 
-/* .errors-container {
-    display: flex;
-} */
+.errors-container {
+    list-style: none;
+    color: rgb(240, 75, 75);
+    font-family: 'Heebo', sans-serif;
+}
