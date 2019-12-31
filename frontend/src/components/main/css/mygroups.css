@@ -7,17 +7,19 @@
 }
 
 #index-title-container{
+
   display: flex;
   justify-content: center;
   background-color: white;
   padding: 30px 0px;
-
 }
 
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
+  border: 2px solid black;
+  margin: 0px 15px 15px;
 }
 
 .group-listing-banner{
@@ -25,14 +27,28 @@
   flex-direction: row;
 }
 
+.gl-info-container{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.gl-button-container{
+  align-self: center;
+  padding: 8px;
+}
+
+.gl-button-item{
+  padding: 8px;
+}
+
 .group-boards-listing-hidden{
   display: none;
 }
 
-.main-header {
-  font-family: 'Heebo', sans-serif;
-  font-size: 40px;
-  color: rgb(19, 138, 138);
-  font-weight: 900;
+.group-boards-listing-shown{
+  border: 2px solid black;
+  padding: 15px;
+  background-color: lightskyblue;
 }
 
