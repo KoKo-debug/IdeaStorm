@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import GroupListing from "./group_boards";
+import GroupListing from "./group_listing";
 import { getUserGroups } from "../../util/groups_util";
 import "./css/mygroups.css";
 
