@@ -1,0 +1,36 @@
+.signup-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+ .signup-form {
+    position: relative;
+    margin-top: 6%;
+    padding: 30px;
+    background-color: white;
+}
+
+.signup-input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.signup-header {
+    font-size: 35px;
+    margin: 30px;
+    font-family: 'Heebo', sans-serif;
+}
+
+.signup-button {
+    font-size: 20px;
+    background-color: rgb(29, 202, 202);
+    color: white;
+    appearance: none;
+    padding: 10px 60px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;;
+    width: 323px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup_form.css';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -57,34 +58,47 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
+                <form className ="signup-form" onSubmit={this.handleSubmit}>
+                    <div className="signup-input-field">
+                        <span className="signup-header">Sign Up</span>
                         <br />
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
+                        <section className="input-section">
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                placeholder="Email"
+                            />
+                            <i className="fas fa-envelope"></i>
+                        </section>
                         <br />
-                        <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            placeholder="Handle"
-                        />
+                        <section className="input-section">
+                            <input type="text"
+                                value={this.state.handle}
+                                onChange={this.update('handle')}
+                                placeholder="Handle"
+                            />
+                            <i className="fas fa-user"></i>
+                        </section>
                         <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
+                        <section className="input-section">
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                            />
+                            <i className="fas fa-unlock-alt"></i>
+                        </section>
                         <br />
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
+                        <section className="input-section">
+                            <input type="password"
+                                value={this.state.password2}
+                                onChange={this.update('password2')}
+                                placeholder="Confirm Password"
+                            />
+                            <i className="fas fa-unlock-alt"></i>
+                        </section>
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input className="signup-button" type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
                 </form>
