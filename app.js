@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require("./conf/keys").mongoURI;
 const users = require("./routes/api/users");
+const groups = require("./routes/api/groups");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const User = require('./models/User');
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
+app.use("/api/groups", groups);
 
 const port = process.env.PORT || 5000;
 
@@ -42,10 +44,10 @@ app.get('/', (req, res) => {
                         user.populate('createdGroups');
                         res.json(user);
                         }
-                    );
+                    ).catch(err => console.log(err))
                 }
-            )
-        })
+            ).catch(err => console.log(err))
+        }).catch(err => console.log(err))
 })
 
 app.listen(port, () => {
