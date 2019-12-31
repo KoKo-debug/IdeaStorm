@@ -18,7 +18,6 @@
   flex-direction: column;
   margin: 15px 30px 15px;
   align-items: center;
-
 }
 
 .ils-panel-item{
@@ -26,6 +25,34 @@
   margin: 5px 10px 0px 10px;
   padding: 4px;
 }
+
+#ils-join-create-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.ils-jc-button{
+  background-color: purple;
+}
+
+.ils-jc-button:hover{
+  cursor: pointer;
+}
+
+.ils-jc-selected{
+  color: red;
+}
+.ils-jc-selected > .ils-jc-button{
+  background-color: darkslateblue
+}
+
+.ils-jc-unselected{
+  color:yellow;
+}
+
+
+
+
 
 
 
