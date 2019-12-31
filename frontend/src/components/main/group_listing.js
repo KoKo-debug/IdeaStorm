@@ -7,6 +7,7 @@ class GroupListing extends React.Component{
       status: "group-boards-listing-hidden"
     };
     this.toggleBoardsDisplay = this.toggleBoardsDisplay.bind(this);
+    this.buildGroupBoard = this.buildGroupBoard.bind(this);
   }
 
   toggleBoardsDisplay(){
@@ -17,25 +18,38 @@ class GroupListing extends React.Component{
     }
   }
 
-  render(){
+  buildGroupBoard(){
+
+    
+
+  }
+
+  render(){      
+    let group = this.props.group;      
     return(
       <div className="group-listing-container">
         <div className="group-listing-banner">
-          <div>
-            Image
+          <div className="gl-image">
+            Image Placeholder
           </div>
-          <div>
-            General Info
+          <div className="gl-info-container">
+            <h2>
+              {group.name}
+            </h2>
+            <p>
+              Members: {group.members.length}
+            </p>
+            
           </div>
-          <div>
-            <button>
+          <div className="gl-button-container">
+            <button onClick={()=>this.toggleBoardsDisplay()}> 
               Show Boards button
             </button>
           </div>
         </div>
 
         <div className={`${this.state.status}`}>
-
+          Shown
         </div>
 
       </div>

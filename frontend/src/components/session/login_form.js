@@ -79,7 +79,7 @@ class LoginForm extends React.Component {
                                 onChange={this.update('password')}
                                 placeholder="Password"
                             />
-                            <i class="fas fa-unlock-alt"></i>
+                            <i className="fas fa-unlock-alt"></i>
                         </section>
                         <br />
                         <input className="login-button" type="submit" value="Submit" />

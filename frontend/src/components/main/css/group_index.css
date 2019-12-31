@@ -31,6 +31,12 @@
   flex-direction: row;
 }
 
+.gl-image{
+  padding: 4px;
+  border: 2px solid black;
+
+}
+
 .ils-jc-button{
   background-color: purple;
 }

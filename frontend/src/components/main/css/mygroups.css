@@ -22,6 +22,16 @@
   flex-direction: row;
 }
 
+.gl-info-container{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.gl-button-container{
+  align-self: center;
+}
+
 .group-boards-listing-hidden{
   display: none;
 }

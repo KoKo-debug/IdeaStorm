@@ -5,7 +5,7 @@ const GroupsReducer = ( state = {}, action ) => {
   switch (action.type) {
     case RECEIVE_USER_GROUPS:
       //debugger;
-      return Object.assign({},action.groups);  
+      return Object.assign({},action.groups.data);  
     default:
       return state;
   }
