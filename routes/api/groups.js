@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
-    Tweet.find({ user: req.params.user_id })
+    Group.find({ creator: req.params.user_id })
         .sort({ date: -1 })
         .then(groups => res.json(groups))
         .catch(err =>
