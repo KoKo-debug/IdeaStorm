@@ -1,0 +1,55 @@
+.join-create-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+
+
+.joinStorm-button {
+    font-family: 'Heebo', sans-serif;
+    font-size: 17px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+    background-color: rgb(29, 202, 202);
+    cursor: pointer;
+}
+
+.createStorm-button {
+    font-family: 'Heebo', sans-serif;
+    font-size: 17px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+    background-color: rgb(29, 202, 202);
+    cursor: pointer;
+}
+
+.join-form-container {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.join-form {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+}
+
+.join-form-header {
+    text-align: center;
+}
+
+.create-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}

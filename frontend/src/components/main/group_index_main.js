@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/group_index.css';
+import './css/join_create_form.css';
 import MyGroups from "./mygroups_section";
 import JoinCreateForm from './join_create_form';
 
@@ -10,37 +11,31 @@ class GroupIndexMain extends React.Component {
       status: ""
     };
     this.handleClick = this.handleClick.bind(this);
-    // this.renderMainView = this.renderMainView.bind(this);
   }
 
-  // renderMainView(){
-  //     return(
-  //       <MyGroups />
-  //     ) 
-  //   } else {
-  //     return null;
-  //   }
-  // }
 
   handleClick(field) {
     if (field === "join") {
-      this.setState({
-        status: "join"
-      });
+      if (this.state.status === "join") {
+        this.setState({
+          status: ""
+        });
+      } else {
+        this.setState({
+          status: "join"
+        });
+      }
     } else if (field === "create") {
-      this.setState({
-        status: "create"
-      });
+      if (this.state.status === "create") {
+        this.setState({
+          status: ""
+        });  
+      } else {
+        this.setState({
+          status: "create"
+        });
+      }
     } 
-
-
-    // if (this.state.status === "") {
-    // } else {
-    //   this.setState({
-    //     status: ""
-    //   });
-    // }
-    
   }
 
   render(){
@@ -48,7 +43,7 @@ class GroupIndexMain extends React.Component {
       <div id="group-index-main">
         <section id="index-left-sidebar-container">
           
-          <section>
+          <section className="join-create-button-container">
             <button className="joinStorm-button"
               onClick={() => this.handleClick("join")}>
               Join a Storm
