@@ -23,12 +23,14 @@ class MyGroupIndex extends React.Component{
   }
 
   componentDidMount(){
-    debugger;
-    if(typeof this.props.groups === "undefined"){
-      this.props.getUserGroups(this.props.currentUser.id)
-    }
+    // debugger;
+    // if(typeof this.props.groups === "undefined"){
+    //   this.props.getUserGroups(this.props.currentUser.id)
+    // }
+    this.props.getUserGroups(this.props.currentUser.id)
   }
   render(){ 
+    debugger;
     if (typeof this.props.groups === "undefined") {
       return null;
     } else {
