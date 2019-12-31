@@ -17,19 +17,21 @@ class JoinCreateForm extends React.Component {
                             Join a group!
                         </h2>
 
-                        <h3>
+                        <h3 className="join-create-text">
                             Please enter your join-code.
                         </h3>
+                        <span className="join-create-input-span">
+                            <input type="text"
+                                id="join-create-input"
+                            />
+                        </span>
 
-                        <input type="text">
-
-                        </input>
-
-                        <h3>
+                        <h3 className="join-create-text">
                             If you do not have a join-code, please ask your group creator for one.
                         </h3>
-
-                        <input className="join-group-button" type="submit" value="submit" />
+                        <span className="join-create-span">
+                            <input className="join-create-button" type="submit" value="submit" />
+                        </span>
                             send user Id as well
                     </form>
                 </section>
@@ -38,18 +40,26 @@ class JoinCreateForm extends React.Component {
             return (
                 <section className="join-form-container">
                     <form className="create-form">
-                        <h3 className="crate-form-header">
+                        <h2 className="create-form-header">
                             Create a Group!
-                        </h3>
+                        </h2>
 
-                        <h3>
+                        <h3 className="join-create-text">
                             What is the name of your group?
                         </h3>
 
-                        <input type="text">
-                        </input>
+                        <span className="join-create-input-span">
+                            <input type="text"
+                                id="join-create-input"
+                            />
+                        </span>
 
-                        <input className="join-group-button" type="submit" value="submit" />
+                        <span className="join-create-span">
+                            <input className="join-create-button" 
+                                type="submit" 
+                                value="submit" 
+                            />
+                        </span >
                         send user id as well
                     </form>
                 </section>

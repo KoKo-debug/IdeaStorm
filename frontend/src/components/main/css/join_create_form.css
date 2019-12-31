@@ -47,9 +47,48 @@
     text-align: center;
 }
 
+.join-create-input-span {
+    display: flex;
+    justify-content: center;
+}
+
+.join-create-span {
+    display: flex;
+    justify-content: center;
+}
+
 .create-form {
     background-color: white;
+    border: 1px solid transparent;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     width: 80%;
+    padding: 20px;
+}
+
+.create-form-header {
+    text-align: center;
+}
+
+.join-create-text {
+    margin-left: 8%;
+    width: 85%;
+}
+
+#join-create-input {
+    width: 75%;
+}
+
+.join-create-button {
+    font-size: 20px;
+    background-color: rgb(29, 202, 202);
+    color: white;
+    appearance: none;
+    padding: 10px 60px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;;
+    width: 85%;
+    margin: 20px 0px;
 }
