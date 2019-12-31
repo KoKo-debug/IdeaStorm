@@ -14,6 +14,10 @@ const GroupSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
+    boards: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Board'
+    }],
     joinCode: {
         type: String,
         required: true

@@ -6,8 +6,10 @@ const users = require("./routes/api/users");
 const groups = require("./routes/api/groups");
 const bodyParser = require('body-parser');
 const passport = require('passport');
+
 const User = require('./models/User');
 const Group = require('./models/Group');
+const Board = require('./models/Board');
 
 mongoose
     .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -29,20 +31,18 @@ app.use("/api/groups", groups);
 const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-    User.findOne({ email: 'test001@mail.com' })
-        .then(user => {
-            const newGroup = new Group({
-                name: "test group 001",
-                creator: user,
-                joinCode: "abcd1234"
+    Group.findOne({ name: 'test group 001' })
+        .then(group => {
+            const newBoard = new Board({
+                title: "test board 001",
+                description: "help !",
+                group: group
             });
-            newGroup.members.push(user);
-            newGroup.save().then(
-                group => {
-                    user.createdGroups.push(group);
-                    user.save().then(user => {
-                        user.populate('createdGroups');
-                        res.json(user);
+            newBoard.save().then(
+                board => {
+                    group.boards.push(board);
+                    group.save().then(group => {
+                        res.json(group);
                         }
                     ).catch(err => console.log(err))
                 }
