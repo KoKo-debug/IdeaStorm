@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import GroupListing from "./group_boards";
 import { getUserGroups } from "../../util/groups_util";
-import "./mygroups.css";
+import "./css/mygroups.css";
 
 class MyGroupIndex extends React.Component{
   constructor(props){
