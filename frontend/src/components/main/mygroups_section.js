@@ -40,10 +40,11 @@ class MyGroupIndex extends React.Component{
         </div>
           <div>
             Build Group/Board selector logic here
+            hello
         </div>
         </div>
       )
-      
+
     }    
   }
 }
