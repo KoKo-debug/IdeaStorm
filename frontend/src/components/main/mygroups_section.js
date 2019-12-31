@@ -41,11 +41,13 @@ class MyGroupIndex extends React.Component{
       return (
         <div id="index-main-container">
           <div id="index-title-container">
-            My Groups
-        </div>
+            <span className="main-header">
+              My Organizations
+            </span>
+          </div>
           <div>
             Build Group/Board selector logic here
-        </div>
+          </div>
         </div>
       )
 

@@ -19,9 +19,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <Link to={'/mindmaps'}>Mind Maps</Link>
-                    <Link to={'/new_mindmap'}>Create Mind Map</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <button className="logout-button" onClick={this.logoutUser}>Logout</button>
                 </div>
             );
         } else {
@@ -37,9 +35,9 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="nav-bar">
-                <button className= "logo-button">
+                <Link className="logo-button" to={'/storms'}>
                     <img src={logo} className="App-logo" alt="logo" />
-                </button>
+                </Link>
                 <section className="session-link-container">
                     {this.getLinks()}
                 </section>

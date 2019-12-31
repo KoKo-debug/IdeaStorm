@@ -2,13 +2,16 @@
   background-color: darkseagreen;
   margin: 5px;
   width: 100vw;
-
   display: flex;
   flex-direction: column;
 }
 
 #index-title-container{
-  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 30px 0px;
+
 }
 
 
@@ -24,5 +27,12 @@
 
 .group-boards-listing-hidden{
   display: none;
+}
+
+.main-header {
+  font-family: 'Heebo', sans-serif;
+  font-size: 40px;
+  color: rgb(19, 138, 138);
+  font-weight: 900;
 }
 
