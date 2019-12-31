@@ -9,12 +9,20 @@
 
 #index-title-container{
   background-color: goldenrod;
+  padding: 30px 0px 30px;
+  text-align: center;
+}
+
+#index-mygroups-container{
+  margin: 15px;
 }
 
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
+  border: 2px solid black;
+  margin: 0px 15px 15px;
 }
 
 .group-listing-banner{
@@ -30,9 +38,20 @@
 
 .gl-button-container{
   align-self: center;
+  padding: 8px;
+}
+
+.gl-button-item{
+  padding: 8px;
 }
 
 .group-boards-listing-hidden{
   display: none;
+}
+
+.group-boards-listing-shown{
+  border: 2px solid black;
+  padding: 15px;
+  background-color: lightskyblue;
 }
 

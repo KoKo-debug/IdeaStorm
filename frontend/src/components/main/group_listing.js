@@ -42,8 +42,9 @@ class GroupListing extends React.Component{
             
           </div>
           <div className="gl-button-container">
-            <button onClick={()=>this.toggleBoardsDisplay()}> 
-              Show Boards button
+            <button onClick={()=>this.toggleBoardsDisplay()}
+                    className="gl-button-item"> 
+              Show Boards
             </button>
           </div>
         </div>

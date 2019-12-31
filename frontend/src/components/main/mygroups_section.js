@@ -41,10 +41,10 @@ class MyGroupIndex extends React.Component{
     } else {
       return (
         <div id="index-main-container">
-          <div id="index-title-container">
-            My Groups
-          </div>
-          <div>
+          <h1 id="index-title-container">
+            Active Storms
+          </h1>
+          <div id="index-mygroups-container">
             { this.myGroupsBuilder() }
           </div>
         </div>
