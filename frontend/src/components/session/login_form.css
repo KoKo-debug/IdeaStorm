@@ -3,10 +3,21 @@
     justify-content: center;
 }
 
- .login-form {
+.form-background {
+    position: absolute;
+    height: 92.6vh;
+    width: 100vw;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.login-form {
     position: relative;
     margin-top: 8%;
     padding: 30px;
+    border: 1px solid transparent;
+    border-radius: 15px;
     background-color: white;
 }
 

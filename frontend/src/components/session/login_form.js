@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './login_form.css';
+import backgroundIMG from './background.jpg';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -61,6 +62,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
+                <img src={backgroundIMG} className="form-background" alt="background" />
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <div className="login-input-field">
                         <span className="login-header">Log In</span>
