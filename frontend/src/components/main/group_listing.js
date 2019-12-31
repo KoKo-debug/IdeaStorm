@@ -6,6 +6,15 @@ class GroupListing extends React.Component{
     this.state = {
       status: "group-boards-listing-hidden"
     };
+    this.toggleBoardsDisplay = this.toggleBoardsDisplay.bind(this);
+  }
+
+  toggleBoardsDisplay(){
+    if (this.state.status === "group-boards-listing-hidden"){
+      this.setState({ status: "group-boards-listing-shown" });
+    } else {
+      this.setState({ status: "group-boards-listing-hidden" });
+    }
   }
 
   render(){
