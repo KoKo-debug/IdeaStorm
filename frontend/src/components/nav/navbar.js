@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import logo from './ideaStorm2.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -26,8 +27,8 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className="signup-login">
-                    <Link className="signup" to={'/signup'}>Signup</Link>
                     <Link className="login" to={'/login'}>Login</Link>
+                    <Link className="signup" to={'/signup'}>Signup</Link>
                 </div>
             );
         }
@@ -36,7 +37,9 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="nav-bar">
-                <h1>IdeaStorm</h1>
+                <button className= "logo-button">
+                    <img src={logo} className="App-logo" alt="logo" />
+                </button>
                 <section className="session-link-container">
                     {this.getLinks()}
                 </section>

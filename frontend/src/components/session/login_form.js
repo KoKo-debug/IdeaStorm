@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './login_form.css';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class LoginForm extends React.Component {
     // Render the session errors if there are any
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors-container">
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
                         {this.state.errors[error]}
@@ -59,22 +60,29 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
+            <div className="login-form-container">
+                <form className="login-form" onSubmit={this.handleSubmit}>
+                    <div className="login-input-field">
+                        <span className="login-header">Log In</span>
+                        <section className="input-section">
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                placeholder="Email"
+                            />
+                            <i className="fas fa-envelope"></i>
+                        </section>
                         <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
+                        <section className="input-section">
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                            />
+                            <i class="fas fa-unlock-alt"></i>
+                        </section>
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input className="login-button" type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
                 </form>
