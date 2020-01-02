@@ -1,8 +1,13 @@
+
+
+
 #group-index-main{
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   
 }
 
@@ -34,6 +39,7 @@
 .gl-image{
   padding: 4px;
   border: 2px solid black;
+  
 
 }
 

@@ -1,17 +1,23 @@
 #index-main-container{
-  background-color: darkseagreen;
+  /* background-color: darkseagreen; */
+  /* background-image: url(public/background1.jpg); */
   margin: 5px;
   width: 100vw;
   display: flex;
   flex-direction: column;
+
 }
 
 #index-title-container{
 
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(132,184,218);
+  opacity: 90%;
   padding: 30px 0px;
+  width: 45%;
+  align-self: center;
+  border-radius: 40% 65% 20% 15%;
 }
 
 #index-mygroups-container{
@@ -26,11 +32,16 @@
   flex-direction: column;
   border: 2px solid black;
   margin: 0px 45px 30px;
+  border-radius: 25% 10%;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: white;
+  opacity: 80%;
 }
 
 .group-listing-banner{
   display: flex;
   flex-direction: row;
+  
 }
 
 .gl-info-container{
@@ -42,10 +53,18 @@
 .gl-button-container{
   align-self: center;
   padding: 8px;
+  
 }
 
 .gl-button-item{
   padding: 8px;
+  border-radius: 15%;
+  border: 5px double yellow;
+}
+
+.gl-button-item:hover{
+  cursor: pointer;
+  border: 5px double blue;
 }
 
 .group-boards-listing-hidden{
@@ -63,11 +82,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 0px;
+  margin: 0px;
 }
 
 .board-list-element{
   padding: 5px;
   border: 1px solid black;
+  margin-right: 10px;
 }
 
