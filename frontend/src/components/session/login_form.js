@@ -15,17 +15,8 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
-
-    // Once the user has been authenticated, redirect
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.currentUser === true) {
-    //         this.props.history.push('/storms');
-    //     }
-
-    //     // Set or clear errors
-    //     this.setState({ errors: nextProps.errors })
-    // }
 
     // Handle field updates (called in the render method)
     update(field) {
@@ -41,6 +32,16 @@ class LoginForm extends React.Component {
         let user = {
             email: this.state.email,
             password: this.state.password
+        };
+
+        this.props.login(user);
+    }
+
+    demoLogin(e){
+        e.preventDefault();
+        let user = {
+            email: "test001@mail.com",
+            password: "123456"
         };
 
         this.props.login(user);
@@ -86,9 +87,7 @@ class LoginForm extends React.Component {
                         <br />
                         <input className="login-button" type="submit" value="Submit" />
                         <button id="login-demo-button" onClick={(event) => {
-                            this.state.email = "test001@mail.com"
-                            this.state.password = "123456"
-                            this.handleSubmit(event)
+                            this.demoLogin(event);
                             }}>
                             DEMO USER
                         </button>
