@@ -31,6 +31,18 @@
   flex-wrap: wrap;
 }
 
+@keyframes mytest{
+  0%{
+    background-color: red;
+  }
+  50%{
+    background-color: orange;
+  }
+  100%{
+    background-color: white;
+  }
+}
+
 
 .group-listing-container{
   display: flex;
@@ -41,6 +53,9 @@
   /* background-color: rgba(0, 0, 0, 0.2); */
   background-color: white;
   opacity: 80%;
+  animation: mytest 4s infinite;
+  /* animation-name: slide;  */
+
 }
 
 .group-listing-banner{

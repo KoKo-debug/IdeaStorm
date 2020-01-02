@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { format } from 'url';
+// import { format } from 'url';
 import './css/join_create_form.css';
 
 class JoinCreateForm extends React.Component {
@@ -24,8 +24,6 @@ class JoinCreateForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-
     }
 
 
