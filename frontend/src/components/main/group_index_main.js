@@ -6,6 +6,7 @@ import JoinCreateForm from './join_create_form';
 import backgroundIMG from "./background1.jpg";
 
 class GroupIndexMain extends React.Component {
+  debugger;
   constructor(props){
     super(props);
     this.state = {

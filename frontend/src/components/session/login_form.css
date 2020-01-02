@@ -84,7 +84,11 @@ input[type=password]:focus {
 
 .login-button {
     font-size: 20px;
-    background-color: rgb(29, 202, 202);
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 202, 202),
+        rgb(35,153,153)
+    );
     color: white;
     appearance: none;
     padding: 10px 60px;
