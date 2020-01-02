@@ -14,12 +14,18 @@
   padding: 30px 0px;
 }
 
+#index-mygroups-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  margin: 0px 15px 15px;
+  margin: 0px 45px 30px;
 }
 
 .group-listing-banner{
@@ -50,5 +56,18 @@
   border: 2px solid black;
   padding: 15px;
   background-color: lightskyblue;
+}
+
+.group-board-container{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+.board-list-element{
+  padding: 5px;
+  border: 1px solid black;
 }
 
