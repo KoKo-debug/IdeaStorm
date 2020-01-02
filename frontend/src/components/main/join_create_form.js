@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { format } from 'url';
+// import { format } from 'url';
 import './css/join_create_form.css';
 import { joinUserGroup } from '../../actions/groups_actions';
 
@@ -30,7 +30,6 @@ class JoinCreateForm extends React.Component {
         let userId = this.props.currentUser.id;
         let joinCode = this.state.joinCode;
         this.props.joinUserGroup(userId, joinCode);
-
 
     }
 

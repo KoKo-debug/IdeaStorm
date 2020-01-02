@@ -41,11 +41,11 @@ app.use("/api/groups", groups);
 const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-    Group.findOne({ name: 'test group 001' })
+    Group.findOne({ name: 'test group 003' })
         .then(group => {
             const newBoard = new Board({
                 title: "test board 001",
-                description: "help !",
+                description: "help me!",
                 group: group
             });
             newBoard.save().then(

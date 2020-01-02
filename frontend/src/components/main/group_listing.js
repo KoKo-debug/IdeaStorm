@@ -1,5 +1,7 @@
 import React from "react";
 import BoardListing from "./group_boards";
+import BoardCreateForm from "./board_create_form";
+import "./css/board_create.css";
 import appAcademy from './app_academy.jpg';
 
 class GroupListing extends React.Component{
@@ -9,57 +11,57 @@ class GroupListing extends React.Component{
       status: "group-boards-listing-hidden"
     };
     this.toggleBoardsDisplay = this.toggleBoardsDisplay.bind(this);
-    this.buildGroupBoard = this.buildGroupBoard.bind(this);
   }
 
-  toggleBoardsDisplay(){
-    if (this.state.status === "group-boards-listing-hidden"){
+  toggleBoardsDisplay(){    
+    if (this.state.status === "group-boards-listing-hidden") {
       this.setState({ status: "group-boards-listing-shown" });
     } else {
       this.setState({ status: "group-boards-listing-hidden" });
     }
   }
 
-  buildGroupBoard(){
-
-    
-
-  }
-
-  render(){      
-    let group = this.props.group;      
+  render(){  
+    let group = this.props.object.group;      
     return(
-      <div className="group-listing-container">
-        <div className="group-listing-banner">
-          <div className="gl-image"
-            style={{
-              background: `url(${appAcademy})`,
-              backgroundSize: `cover`
-            }}>
-            
+      <div id="glc-outer">
+        <div className="group-listing-container">
+          <div className="group-listing-banner">
+           <div className="gl-image"
+              style={{
+               background: `url(${appAcademy})`,
+               backgroundSize: `cover`
+              }}>            
+            </div>
+            <div className="gl-info-container">
+              <h2>
+                {group.name}
+              </h2>
+              <p>
+                Members: {group.members.length}
+              </p>
+            </div>              
+            <div className="gl-button-container">
+              <button onClick={() => this.toggleBoardsDisplay()}
+                className="gl-button-item">
+                Show Boards
+              </button>
+              {/* { this.createBoardButton() } */}
+            </div>
           </div>
-          <div className="gl-info-container">
-            <h2>
-              {group.name}
-            </h2>
-            <p>
-              Members: {group.members.length}
-            </p>
-            
-          </div>
-          <div className="gl-button-container">
-            <button onClick={()=>this.toggleBoardsDisplay()}
-                    className="gl-button-item"> 
-              Show Boards
-            </button>
-          </div>
-        </div>
 
-        <div className={`${this.state.status}`}>
-          <BoardListing boards={group.boards}/>
-        </div>
+          <div className={`${this.state.status}`}>
+            <BoardListing boards={group.boards} />
+          </div>
+          
 
+        </div>
+        <BoardCreateForm object={{
+          group: group,
+          user: this.props.object.currentUser
+        }} />
       </div>
+      
       
     )
   }

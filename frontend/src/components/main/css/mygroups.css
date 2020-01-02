@@ -45,11 +45,24 @@
   height: 80vh;
 }
 
+@keyframes mytest{
+  0%{
+    background-color: red;
+  }
+  50%{
+    background-color: orange;
+  }
+  100%{
+    background-color: white;
+  }
+}
+
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
-  margin: 0px 45px 30px;
+  
+  margin: 0px 0px 30px 45px;
   background-color: transparent;
   opacity: 90%;
 }
@@ -65,19 +78,24 @@
 }
 
 .gl-info-container{
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 5px;
+
 }
 
 .gl-button-container{
   align-self: center;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
   
 }
 
 .gl-button-item{
   padding: 8px;
+  margin-bottom: 15px;
   border-radius: 15%;
   border: 5px double yellow;
 }
@@ -116,3 +134,10 @@
   margin-right: 10px;
 }
 
+.group-create-board-hidden{
+  display: none;
+}
+
+/* .group-create-board-shown{
+
+} */

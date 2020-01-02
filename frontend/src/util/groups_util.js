@@ -9,5 +9,5 @@ export const joinGroup = (userId, joinCode) => {
 };
 
 // export const createGroup = (userId, name) => {
-//   return axios.post('/api/group/create', userId, name);
+//   return axios.post('/api/group/', userId, name);
 // };
