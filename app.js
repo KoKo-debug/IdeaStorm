@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,7 +13,6 @@ const User = require('./models/User');
 const Group = require('./models/Group');
 const Board = require('./models/Board');
 
-const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
