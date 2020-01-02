@@ -12,7 +12,12 @@
 
   display: flex;
   justify-content: center;
-  background-color: rgb(132,184,218);
+  /* background-color: rgb(132,184,218); */
+  background-image: radial-gradient(
+    circle at center,
+    yellow,
+    #f06d06
+  );
   opacity: 90%;
   padding: 30px 0px;
   width: 45%;
