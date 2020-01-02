@@ -26,11 +26,13 @@
   flex-direction: column;
   border: 2px solid black;
   margin: 0px 45px 30px;
+  border-radius: 25% 10%;
 }
 
 .group-listing-banner{
   display: flex;
   flex-direction: row;
+  
 }
 
 .gl-info-container{
@@ -42,6 +44,7 @@
 .gl-button-container{
   align-self: center;
   padding: 8px;
+  
 }
 
 .gl-button-item{
@@ -63,11 +66,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 0px;
+  margin: 0px;
 }
 
 .board-list-element{
   padding: 5px;
   border: 1px solid black;
+  margin-right: 10px;
 }
 
