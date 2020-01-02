@@ -1,0 +1,15 @@
+#glc-outer{
+  display: flex;
+  flex-direction: row;
+}
+
+.gi-board-button-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+}
+
+.gi-board-create-button{
+  height: 33%;
+  margin-top: 65px;
+}

@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  margin: 0px 45px 30px;
+  margin: 0px 0px 30px 45px;
   border-radius: 25% 10%;
   /* background-color: rgba(0, 0, 0, 0.2); */
   background-color: white;
@@ -65,9 +65,11 @@
 }
 
 .gl-info-container{
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 5px;
+
 }
 
 .gl-button-container{
@@ -116,3 +118,10 @@
   margin-right: 10px;
 }
 
+.group-create-board-hidden{
+  display: none;
+}
+
+/* .group-create-board-shown{
+
+} */
