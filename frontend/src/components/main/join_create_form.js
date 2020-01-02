@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { format } from 'url';
 import './css/join_create_form.css';
 
-
 class JoinCreateForm extends React.Component {
     constructor(props) {
         super(props);
