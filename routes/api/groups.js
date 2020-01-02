@@ -79,10 +79,10 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
                         user.joinedGroups.push(group);
                         user.save().
                           then(() => {
-                            User.findById(req.body.userId)
-                              .populate('joinedGroups')
-                              .then(user => {
-                                  res.json(user);
+                            Group.findOne({ joinCode: req.body.joinCode })
+                              .populate('members')
+                              .then(group => {
+                                  res.json(group);
                               })
                               .catch(err => console.log(err));
                           })
