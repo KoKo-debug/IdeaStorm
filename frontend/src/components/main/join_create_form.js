@@ -8,7 +8,8 @@ class JoinCreateForm extends React.Component {
 
         this.state = {
             joinCode: '',
-            name: ''
+            name: '',
+            errors: {}
         }
     }
 
