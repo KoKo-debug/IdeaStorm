@@ -31,6 +31,7 @@
     margin-top: 10%;
     display: flex;
     justify-content: center;
+    width: 400px;
 }
 
 .join-form {
@@ -48,6 +49,7 @@
 }
 
 .join-create-input-span {
+    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -80,6 +82,13 @@
     width: 75%;
 }
 
+.fab {
+    position: absolute;
+    font-size: 23px;
+    color: rgb(228, 226, 226);
+    top: 10px;
+    left: 25px;
+}
 .join-create-button {
     font-size: 20px;
     background-color: rgb(29, 202, 202);

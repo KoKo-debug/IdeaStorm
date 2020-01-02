@@ -4,6 +4,9 @@ import GroupListing from "./group_listing";
 // import { getUserGroups } from "../../util/groups_util";
 import { fetchUserGroups } from "../../actions/groups_actions";
 import "./css/mygroups.css";
+import backgroundIMG from "./background1.jpg";
+import indexBackground from './index-bg1.jpg';
+import headerCloud from './header-clouds.jpg';
 
 class MyGroupIndex extends React.Component{
   constructor(props){
@@ -45,15 +48,34 @@ class MyGroupIndex extends React.Component{
       return null;
     } else {
       return (
-        <div id="index-main-container">
-          <h1 id="index-title-container">
-            Active Storms
+        <div
+          id="index-main-container"
+          // style={{
+          //   background: `url(${backgroundIMG})`,
+          //   backgroundSize: `cover`
+          // }}
+        >
+          <h1
+            id="index-title-container"
+            style={{
+              background: `url(${headerCloud})`,
+              backgroundSize: `cover`
+            }}
+          >
+            Welcome to IdeaStorm!
           </h1>
-          <div id="index-mygroups-container">
-            { this.myGroupsBuilder() }
+          <div
+            id="index-mygroups-container"
+            style={{
+              background: `url(${indexBackground})`,
+              backgroundSize: `cover`
+            }}
+          >
+            <h3 className="storm-span-text">Here are your Active Storms</h3>
+            {this.myGroupsBuilder()}
           </div>
         </div>
-      )
+      );
 
     }    
   }

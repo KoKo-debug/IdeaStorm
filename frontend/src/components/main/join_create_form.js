@@ -44,63 +44,67 @@ class JoinCreateForm extends React.Component {
         const { status } = this.props; 
         if (status === "join") {
             return (
-                <section className="join-form-container">
-                    <form className="join-form" onSubmit={this.handleSubmit}>
-                        <h2 className="join-form-header">
-                            Join a group!
-                        </h2>
+              <section className="join-form-container">
+                <form className="join-form" onSubmit={this.handleSubmit}>
+                  <h2 className="join-form-header">Join a group!</h2>
 
-                        <h3 className="join-create-text">
-                            Please enter your join-code.
-                        </h3>
-                        <span className="join-create-input-span">
-                            <input type="text"
-                                id="join-create-input"
-                                onChange={this.update("joinCode")}
-                                placeholder="Join-Code"
-                            />
-                        </span>
+                  <h3 className="join-create-text">
+                    Please enter your join-code.
+                  </h3>
+                  <span className="join-create-input-span">
+                    <input
+                      type="text"
+                      id="join-create-input"
+                      onChange={this.update("joinCode")}
+                      placeholder="Join-Code"
+                    />
+                    <i className="fab fa-codepen"></i>
+                  </span>
 
-                        <h3 className="join-create-text">
-                            If you do not have a join-code, please ask your group creator for one.
-                        </h3>
-                        <span className="join-create-span">
-                            <input className="join-create-button" type="submit" value="submit" />
-                        </span>
-                            send user Id as well
-                    </form>
-                </section>
-            )
+                  <h3 className="join-create-text">
+                    If you do not have a join-code, please ask your group
+                    creator for one.
+                  </h3>
+                  <span className="join-create-span">
+                    <input
+                      className="join-create-button"
+                      type="submit"
+                      value="submit"
+                    />
+                  </span>
+                </form>
+              </section>
+            );
         } else if (status === "create") {
             return (
-                <section className="join-form-container">
-                    <form className="create-form">
-                        <h2 className="create-form-header">
-                            Create a Group!
-                        </h2>
+              <section className="join-form-container">
+                <form className="create-form">
+                  <h2 className="create-form-header">Create a Group!</h2>
 
-                        <h3 className="join-create-text">
-                            What is the name of your group?
-                        </h3>
+                  <h3 className="join-create-text">
+                    What is the name of your group?
+                  </h3>
 
-                        <span className="join-create-input-span">
-                            <input type="text"
-                                id="join-create-input"
-                                onChange={this.update("name")}
-                                placeholder="Name of group"
-                            />
-                        </span>
+                  <span className="join-create-input-span">
+                    <input
+                      type="text"
+                      id="join-create-input"
+                      onChange={this.update("name")}
+                      placeholder="Name of group"
+                    />
+                    <i class="fab fa-mixcloud"></i>
+                  </span>
 
-                        <span className="join-create-span">
-                            <input className="join-create-button" 
-                                type="submit" 
-                                value="submit" 
-                            />
-                        </span >
-                        send user id as well
-                    </form>
-                </section>
-            )
+                  <span className="join-create-span">
+                    <input
+                      className="join-create-button"
+                      type="submit"
+                      value="submit"
+                    />
+                  </span>
+                </form>
+              </section>
+            );
         } else {
             return null;
         }
