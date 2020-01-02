@@ -5,11 +5,11 @@ class BoardIndex extends React.Component{
     super(props);
   }
 
-  buildBoard(key){
-    return(
-      <li className="board-list-element">{key}</li>
-    )
-  }
+  // buildBoard(key){
+  //   return(
+  //     <li className="board-list-element">{key}</li>
+  //   )
+  // }
 
   render(){
     let boards = this.props.boards;
@@ -17,7 +17,8 @@ class BoardIndex extends React.Component{
     let boardEles = Object.keys(boards).map((key, idx) => {
       return(
         // this.buildBoard(key)
-        <li key={idx}>
+        <li key={idx}
+          className="board-list-element">
           {boards[key].title}
         </li>
       )
