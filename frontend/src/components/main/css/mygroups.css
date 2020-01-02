@@ -1,5 +1,6 @@
 #index-main-container{
-  background-color: darkseagreen;
+  /* background-color: darkseagreen; */
+  /* background-image: url(public/background1.jpg); */
   margin: 5px;
   width: 100vw;
   display: flex;
@@ -49,6 +50,13 @@
 
 .gl-button-item{
   padding: 8px;
+  border-radius: 15%;
+  border: 5px double yellow;
+}
+
+.gl-button-item:hover{
+  cursor: pointer;
+  border: 5px double blue;
 }
 
 .group-boards-listing-hidden{

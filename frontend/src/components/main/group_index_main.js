@@ -8,7 +8,7 @@ class GroupIndexMain extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      status: ""
+      status: "join"
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,9 +17,7 @@ class GroupIndexMain extends React.Component {
   handleClick(field) {
     if (field === "join") {
       if (this.state.status === "join") {
-        this.setState({
-          status: ""
-        });
+        return;
       } else {
         this.setState({
           status: "join"
@@ -27,15 +25,14 @@ class GroupIndexMain extends React.Component {
       }
     } else if (field === "create") {
       if (this.state.status === "create") {
-        this.setState({
-          status: ""
-        });  
+        return;
       } else {
         this.setState({
           status: "create"
         });
       }
     } 
+    
   }
 
   render(){
