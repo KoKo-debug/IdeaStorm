@@ -61,7 +61,7 @@
 .group-listing-container{
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  
   margin: 0px 0px 30px 45px;
   background-color: transparent;
   opacity: 90%;
