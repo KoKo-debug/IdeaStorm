@@ -73,11 +73,14 @@
 .gl-button-container{
   align-self: center;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
   
 }
 
 .gl-button-item{
   padding: 8px;
+  margin-bottom: 15px;
   border-radius: 15%;
   border: 5px double yellow;
 }

@@ -9,6 +9,7 @@ class GroupListing extends React.Component{
     };
     this.toggleBoardsDisplay = this.toggleBoardsDisplay.bind(this);
     this.buildGroupBoard = this.buildGroupBoard.bind(this);
+    this.createBoardOption = this.createBoardOption.bind(this);
   }
 
   toggleBoardsDisplay(){
@@ -20,13 +21,22 @@ class GroupListing extends React.Component{
   }
 
   buildGroupBoard(){
-
-    
-
   }
 
-  render(){      
-    let group = this.props.group;      
+  createBoardOption(){
+    if(this.props.object.currentUser.id === this.props.object.group.creator){      
+      return(
+        <button className="gl-button-item">
+          Create Board
+        </button>
+      )
+    } else {      
+      return null;
+    }
+  }
+
+  render(){  
+    let group = this.props.object.group;      
     return(
       <div className="group-listing-container">
         <div className="group-listing-banner">
@@ -47,6 +57,7 @@ class GroupListing extends React.Component{
                     className="gl-button-item"> 
               Show Boards
             </button>
+            { this.createBoardOption() }
           </div>
         </div>
 

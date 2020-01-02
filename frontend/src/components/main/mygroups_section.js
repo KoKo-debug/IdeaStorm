@@ -18,9 +18,13 @@ class MyGroupIndex extends React.Component{
     let propGroups = Object.values(this.props.groups);
     
     return propGroups.map((group, idx) => {      
+      const object = {
+        group: group,
+        currentUser: this.props.currentUser,
+      };
       return(
         <div key={idx}>
-          <GroupListing group={group}/>
+          <GroupListing object={object}/>
         </div>        
       );
     })
