@@ -2,10 +2,12 @@
 
 
 #group-index-main{
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   
 }
 

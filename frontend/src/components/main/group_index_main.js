@@ -3,6 +3,7 @@ import './css/group_index.css';
 import './css/join_create_form.css';
 import MyGroups from "./mygroups_section";
 import JoinCreateForm from './join_create_form';
+import backgroundIMG from "./background1.jpg";
 
 class GroupIndexMain extends React.Component {
   constructor(props){
@@ -37,7 +38,11 @@ class GroupIndexMain extends React.Component {
 
   render(){
     return (
-      <div id="group-index-main">
+      <div id="group-index-main"
+            style={{
+              background: `url(${backgroundIMG})`,
+              backgroundSize: `cover`
+          }}>
         <section id="index-left-sidebar-container">
           
           <section className="join-create-button-container">
