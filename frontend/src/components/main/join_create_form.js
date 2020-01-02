@@ -5,7 +5,38 @@ import './css/join_create_form.css';
 class JoinCreateForm extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            joinCode: '',
+            name: ''
+        }
     }
+
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+
+    }
+
+
+    renderErrors() {
+        return(
+            <ul className="errors-container">
+                {Object.keys(this.state.errors).map((error,i) => (
+                    <li key={`error-${i}`}>
+                        {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
 
     render() {
         const { status } = this.props; 
@@ -23,6 +54,8 @@ class JoinCreateForm extends React.Component {
                         <span className="join-create-input-span">
                             <input type="text"
                                 id="join-create-input"
+                                onChange={this.update("joinCode")}
+                                placeholder="Join-Code"
                             />
                         </span>
 
@@ -51,6 +84,8 @@ class JoinCreateForm extends React.Component {
                         <span className="join-create-input-span">
                             <input type="text"
                                 id="join-create-input"
+                                onChange={this.update("name")}
+                                placeholder="Name of group"
                             />
                         </span>
 
