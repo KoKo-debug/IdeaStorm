@@ -1,9 +1,9 @@
 import React from "react";
 
 class BoardIndex extends React.Component{
-  constructor(props){
-    super(props);
-  }
+  // constructor(props){
+  //   super(props);
+  // }
 
   // buildBoard(key){
   //   return(
