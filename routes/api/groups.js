@@ -43,7 +43,6 @@ router.get('/test', (req, res) => {
 
 router.get('/user/:user_id', (req, res) => {
     Group.find({ creator: req.params.user_id })
-        .populate("members")
         .populate("boards")
         .sort({ date: -1 })
         .then(groups => res.json(groups))
@@ -73,11 +72,27 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
                   return res.status(404).json({ nogroupsfound: 'No groups found' });
               }
               group.members.push(req.body.userId);
-              group.save().then(group => {
-                  User.findById(user)
+              group.save().
+                then(group => {
+                  User.findById(req.body.userId)
+                    .then(user => {
+                        user.joinedGroups.push(group);
+                        user.save().
+                          then(() => {
+                            User.findById(req.body.userId)
+                              .populate('joinedGroups')
+                              .then(user => {
+                                  res.json(user);
+                              })
+                              .catch(err => console.log(err));
+                          })
+                          .catch(err => console.log(err));
+                    })
+                    .catch(err => console.log(err));
               })
-
+              .catch(err => console.log(err));
           })
+          .catch(err => console.log(err));
 });
 
 module.exports = router;
