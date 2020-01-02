@@ -24,8 +24,6 @@ class JoinCreateForm extends React.Component {
     }
 
     handleSubmit(e) {
-
-        debugger;
         e.preventDefault();
 
 
