@@ -14,20 +14,20 @@ class Graph extends React.Component {
                 { name: 'Size', id: '2', type: 'sub' },
                 { name: 'Customer', id: '3', type: 'sub' },
                 { name: 'Merchandise', id: '4', type: 'sub' },
-                { name: 'F', id: '5', type: 'idea' },
-                { name: 'G', id: '6', type: 'idea' },
-                { name: 'H', id: '7', type: 'idea' },
-                { name: 'I', id: '8', type: 'idea' },
+                // { name: 'F', id: '5', type: 'idea' },
+                // { name: 'G', id: '6', type: 'idea' },
+                // { name: 'H', id: '7', type: 'idea' },
+                // { name: 'I', id: '8', type: 'idea' },
             ],
             links : [
                 { source: '0', target: '2', type:'main-sub' },
                 { source: '0', target: '1', type:'main-sub' },
                 { source: '0', target: '3', type:'main-sub' },
                 { source: '0', target: '4', type:'main-sub' },
-                { source: '2', target: '5' },
-                { source: '2', target: '6' },
-                { source: '2', target: '7' },
-                { source: '3', target: '8' },
+                // { source: '2', target: '5' },
+                // { source: '2', target: '6' },
+                // { source: '2', target: '7' },
+                // { source: '3', target: '8' },
                 // { source: '1', target: '6' },
                 // { source: '3', target: '4' },
                 // { source: '3', target: '7' },
@@ -154,9 +154,9 @@ class Graph extends React.Component {
             })
             .attr('font-size', function (d, i) {
                 if (i > 0) {
-                    return '.5em';
+                    return '.8em';
                 } else {
-                    return '.9em';
+                    return '1.2em';
                 }
             })
 
