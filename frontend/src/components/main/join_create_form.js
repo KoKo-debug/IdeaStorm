@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { format } from 'url';
 import './css/join_create_form.css';
+
 
 class JoinCreateForm extends React.Component {
     constructor(props) {
@@ -10,7 +12,9 @@ class JoinCreateForm extends React.Component {
             joinCode: '',
             name: '',
             errors: {}
-        }
+        };
+        
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
@@ -20,6 +24,8 @@ class JoinCreateForm extends React.Component {
     }
 
     handleSubmit(e) {
+
+        debugger;
         e.preventDefault();
 
 
@@ -44,7 +50,7 @@ class JoinCreateForm extends React.Component {
         if (status === "join") {
             return (
                 <section className="join-form-container">
-                    <form className="join-form">
+                    <form className="join-form" onSubmit={this.handleSubmit}>
                         <h2 className="join-form-header">
                             Join a group!
                         </h2>
@@ -108,4 +114,17 @@ class JoinCreateForm extends React.Component {
 
 }
 
-export default JoinCreateForm;
+const msp = ({session}) => {
+    return ({
+        currentUser: session.user
+    }) 
+
+}
+
+// const mdp = dispatch => {
+//     return({
+//         joinGroup: userId => dispatch()
+//     })
+// }
+
+export default connect(msp)(JoinCreateForm);
