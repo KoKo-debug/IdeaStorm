@@ -18,14 +18,14 @@ class LoginForm extends React.Component {
     }
 
     // Once the user has been authenticated, redirect
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.history.push('/storms');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         this.props.history.push('/storms');
+    //     }
 
-        // Set or clear errors
-        this.setState({ errors: nextProps.errors })
-    }
+    //     // Set or clear errors
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     // Handle field updates (called in the render method)
     update(field) {
@@ -85,6 +85,13 @@ class LoginForm extends React.Component {
                         </section>
                         <br />
                         <input className="login-button" type="submit" value="Submit" />
+                        <button id="login-demo-button" onClick={(event) => {
+                            this.state.email = "test001@mail.com"
+                            this.state.password = "123456"
+                            this.handleSubmit(event)
+                            }}>
+                            DEMO USER
+                        </button>
                     </div>
                     {this.renderErrors()}
                 </form>

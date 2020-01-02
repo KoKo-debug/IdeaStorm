@@ -84,7 +84,11 @@ input[type=password]:focus {
 
 .login-button {
     font-size: 20px;
-    background-color: rgb(29, 202, 202);
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(29, 202, 202),
+        rgb(35,153,153)
+    );
     color: white;
     appearance: none;
     padding: 10px 60px;
@@ -92,6 +96,22 @@ input[type=password]:focus {
     border-radius: 4px;
     cursor: pointer;;
     width: 323px;
+}
+
+#login-demo-button{
+    padding: 10px 60px;
+    margin-top: 10px;
+    /* border: 1px solid transparent; */
+    border-radius: 4px;
+    cursor: pointer;;
+    width: 65%;
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(230,119,221),
+        rgb(177,78,169)
+    );
+    color: white;
+
 }
 
 .errors-container {

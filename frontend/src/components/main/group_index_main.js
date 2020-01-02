@@ -8,6 +8,7 @@ import sideBackground from "./side-backgrounnd.jpg";
 import clouds from './clouds.png';
 
 class GroupIndexMain extends React.Component {
+  debugger;
   constructor(props){
     super(props);
     this.state = {
