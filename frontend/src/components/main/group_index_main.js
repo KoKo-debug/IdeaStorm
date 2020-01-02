@@ -4,7 +4,6 @@ import './css/join_create_form.css';
 import MyGroups from "./mygroups_section";
 import JoinCreateForm from './join_create_form';
 import backgroundIMG from "./background1.jpg";
-import sideBackground from "./side-backgrounnd.jpg";
 import clouds from './clouds.png';
 
 class GroupIndexMain extends React.Component {
@@ -41,11 +40,7 @@ class GroupIndexMain extends React.Component {
 
   render(){
     return (
-      <div id="group-index-main"
-            style={{
-              background: `url(${backgroundIMG})`,
-              backgroundSize: `cover`
-          }}>
+      <div id="group-index-main">
         <section id="index-left-sidebar-container"
           style={{
               background: `url(${clouds})`,
@@ -63,7 +58,7 @@ class GroupIndexMain extends React.Component {
             </button>
           </section>
 
-          <section className="join-create-main-container">
+          <section >
             <JoinCreateForm status={this.state.status} />
           </section>
 

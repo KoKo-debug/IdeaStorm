@@ -1,5 +1,6 @@
 import React from "react";
 import BoardListing from "./group_boards";
+import appAcademy from './app_academy.jpg';
 
 class GroupListing extends React.Component{
   constructor(props){
@@ -30,8 +31,12 @@ class GroupListing extends React.Component{
     return(
       <div className="group-listing-container">
         <div className="group-listing-banner">
-          <div className="gl-image">
-            Image Placeholder
+          <div className="gl-image"
+            style={{
+              background: `url(${appAcademy})`,
+              backgroundSize: `cover`
+            }}>
+            
           </div>
           <div className="gl-info-container">
             <h2>

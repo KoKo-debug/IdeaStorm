@@ -1,7 +1,6 @@
 #index-main-container{
   /* background-color: darkseagreen; */
   /* background-image: url(public/background1.jpg); */
-  margin: 5px;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -12,36 +11,57 @@
 
   display: flex;
   justify-content: center;
-  background-color: rgb(132,184,218);
-  opacity: 90%;
-  padding: 30px 0px;
-  width: 45%;
-  align-self: center;
-  border-radius: 40% 65% 20% 15%;
+  align-items: center;
+  position: relative;
+  margin: 0px;
+  height: 360px;
+  font-size: 50px;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+  border: 1px solid rgb(228, 227, 227);
+}
+
+.storm-span-text {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  font-size: 20px;
+  background-color: white;
+  opacity: 0.67;
+  text-indent: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: 'Heebo', sans-serif;
+
 }
 
 #index-mygroups-container{
+  position: relative;
+  padding-top: 140px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 80vh;
 }
 
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
   margin: 0px 45px 30px;
-  border-radius: 25% 10%;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  background-color: white;
-  opacity: 80%;
+  background-color: transparent;
+  opacity: 90%;
 }
 
 .group-listing-banner{
+  border: 2px solid black;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  background-color: white;
   display: flex;
   flex-direction: row;
-  
+  overflow: hidden;
 }
 
 .gl-info-container{
@@ -74,6 +94,9 @@
 .group-boards-listing-shown{
   border: 2px solid black;
   padding: 15px;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  height: 100px;
   background-color: lightskyblue;
 }
 
