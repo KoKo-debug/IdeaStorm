@@ -1,38 +1,35 @@
 import React from "react";
 
-class GroupListing extends React.Component{
+class BoardIndex extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      status: "group-boards-listing-hidden"
-    };
   }
 
+  // buildBoard(key){
+  //   return(
+  //     <li className="board-list-element">{key}</li>
+  //   )
+  // }
+
   render(){
+    let boards = this.props.boards;
+
+    let boardEles = Object.keys(boards).map((key, idx) => {
+      return(
+        // this.buildBoard(key)
+        <li key={idx}
+          className="board-list-element">
+          {boards[key].title}
+        </li>
+      )
+    });
+    
     return(
-      <div className="group-listing-container">
-        <div className="group-listing-banner">
-          <div>
-            Image
-          </div>
-          <div>
-            General Info
-          </div>
-          <div>
-            <button>
-              Show Boards button
-            </button>
-          </div>
-        </div>
-
-        <div className={`${this.state.status}`}>
-
-        </div>
-
-      </div>
-      
+      <ul className="group-board-container">
+        {boardEles}
+      </ul>
     )
   }
 }
 
-export default GroupListing;
+export default BoardIndex;

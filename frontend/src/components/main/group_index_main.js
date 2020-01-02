@@ -1,68 +1,75 @@
 import React from 'react';
-import './group_index.css';
+import './css/group_index.css';
+import './css/join_create_form.css';
 import MyGroups from "./mygroups_section";
+import JoinCreateForm from './join_create_form';
+import backgroundIMG from "./background1.jpg";
+import sideBackground from "./side-backgrounnd.jpg";
+import clouds from './clouds.png';
 
 class GroupIndexMain extends React.Component {
+  debugger;
   constructor(props){
     super(props);
     this.state = {
-      joinStatus: "ils-jc-selected",
-      createStatus: "ils-jc-unselected",
+      status: "join"
     };
-    this.changeSelect = this.changeSelect.bind(this);
-    this.renderMainView = this.renderMainView.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  changeSelect(){
-    let newState = {};
-    if (this.state.joinStatus === "ils-jc-selected") {
-      newState = {
-        joinStatus: "ils-jc-unselected",
-        createStatus: "ils-jc-selected"
-      };
-    } else {
-      newState = {
-        joinStatus: "ils-jc-selected",
-        createStatus: "ils-jc-unselected",
-      };
-    }
-    this.setState(newState);
-  }
 
-  renderMainView(){
-    if(this.state.joinStatus === "ils-jc-selected"){
-      return(
-        <MyGroups />
-      ) 
-    } else {
-      return null;
-    }
+  handleClick(field) {
+    if (field === "join") {
+      if (this.state.status === "join") {
+        return;
+      } else {
+        this.setState({
+          status: "join"
+        });
+      }
+    } else if (field === "create") {
+      if (this.state.status === "create") {
+        return;
+      } else {
+        this.setState({
+          status: "create"
+        });
+      }
+    } 
+    
   }
 
   render(){
     return (
-      <div id="group-index-main">
-        <div id="index-left-sidebar-container">
-          <div id="ils-panel">
-            <div className="ils-panel-item">
-              <div id="ils-join-create-container">
-                <button className={`ils-jc-button ${this.state.joinStatus}`}
-                  onClick={() => this.changeSelect()}>
-                  Join a Storm
-                </button>
-                <button className={`ils-jc-button ${this.state.createStatus}`}
-                  onClick={() => this.changeSelect()}>
-                  Create a Storm
-                </button>
-              </div>
-            </div>
-            <div className="ils-panel-item">
-              KEYCODE:
-            </div>
-          </div>
-        </div>        
+      <div id="group-index-main"
+            style={{
+              background: `url(${backgroundIMG})`,
+              backgroundSize: `cover`
+          }}>
+        <section id="index-left-sidebar-container"
+          style={{
+              background: `url(${clouds})`,
+              backgroundSize: `cover`
+          }}>
+          
+          <section className="join-create-button-container">
+            <button className="joinStorm-button"
+              onClick={() => this.handleClick("join")}>
+              Join a Storm
+            </button>
+            <button className="createStorm-button"
+              onClick={() => this.handleClick("create")}>
+              Create a Storm
+            </button>
+          </section>
 
-        {this.renderMainView()}
+          <section className="join-create-main-container">
+            <JoinCreateForm status={this.state.status} />
+          </section>
+
+        </section>        
+
+        <MyGroups />
 
       </div>
     );

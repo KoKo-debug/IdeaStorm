@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './signup_form.css';
+import backgroundIMG from './background.jpg';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -17,13 +18,13 @@ class SignupForm extends React.Component {
         this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/login');
+    //     }
 
-        this.setState({ errors: nextProps.errors })
-    }
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -38,9 +39,8 @@ class SignupForm extends React.Component {
             handle: this.state.handle,
             password: this.state.password,
             password2: this.state.password2
-        };
-
-        this.props.signup(user, this.props.history);
+        };        
+        this.props.signup(user).then(() => this.props.history.push("/storms"));
     }
 
     renderErrors() {
@@ -58,6 +58,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
+                <img src={backgroundIMG} className="form-background" alt="background" />
                 <form className ="signup-form" onSubmit={this.handleSubmit}>
                     <div className="signup-input-field">
                         <span className="signup-header">Sign Up</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './login_form.css';
+import backgroundIMG from './background.jpg';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -17,14 +18,14 @@ class LoginForm extends React.Component {
     }
 
     // Once the user has been authenticated, redirect
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.history.push('/storms');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         this.props.history.push('/storms');
+    //     }
 
-        // Set or clear errors
-        this.setState({ errors: nextProps.errors })
-    }
+    //     // Set or clear errors
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     // Handle field updates (called in the render method)
     update(field) {
@@ -61,6 +62,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
+                <img src={backgroundIMG} className="form-background" alt="background" />
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <div className="login-input-field">
                         <span className="login-header">Log In</span>
@@ -79,10 +81,17 @@ class LoginForm extends React.Component {
                                 onChange={this.update('password')}
                                 placeholder="Password"
                             />
-                            <i class="fas fa-unlock-alt"></i>
+                            <i className="fas fa-unlock-alt"></i>
                         </section>
                         <br />
                         <input className="login-button" type="submit" value="Submit" />
+                        <button id="login-demo-button" onClick={(event) => {
+                            this.state.email = "test001@mail.com"
+                            this.state.password = "123456"
+                            this.handleSubmit(event)
+                            }}>
+                            DEMO USER
+                        </button>
                     </div>
                     {this.renderErrors()}
                 </form>

@@ -1,14 +1,18 @@
+
+
+
 #group-index-main{
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   
 }
 
 #index-left-sidebar-container{
   background-color: cadetblue;
-  margin: 5px;
   min-width: 25%;
 }
 
@@ -29,6 +33,13 @@
 #ils-join-create-container{
   display: flex;
   flex-direction: row;
+}
+
+.gl-image{
+  padding: 4px;
+  border: 2px solid black;
+  
+
 }
 
 .ils-jc-button{
