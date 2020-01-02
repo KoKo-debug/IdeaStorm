@@ -2,18 +2,17 @@
 
 
 #group-index-main{
-  /* background-color: blue; */
   display: flex;
   flex-direction: row;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 #index-left-sidebar-container{
   background-color: cadetblue;
-  min-width: 25%;
+  min-width: fit-content;
+  border-right: 1px solid rgb(207, 205, 205);
 }
 
 #ils-panel{
@@ -37,7 +36,7 @@
 
 .gl-image{
   padding: 4px;
-  border: 2px solid black;
+  min-width: 120px;
   
 
 }

@@ -56,6 +56,10 @@ input:focus ~ .fas {
     color: rgb(29, 202, 202);
 }
 
+input:focus ~ .fab {
+    color: rgb(29, 202, 202);
+}
+
 input[type=text] {
     font-size: 17px;
     padding: 10px 0px;
