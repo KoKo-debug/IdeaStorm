@@ -23,7 +23,6 @@ class GroupListing extends React.Component{
 
   render(){  
     let group = this.props.object.group;      
-    debugger;
     return(
       <div id="glc-outer">
         <div className="group-listing-container">

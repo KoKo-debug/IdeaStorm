@@ -25,7 +25,6 @@ class JoinCreateForm extends React.Component {
     }
 
     handleJoinSubmit(e) {
-      debugger;
         e.preventDefault();
         let userId = this.props.currentUser.id;
         let joinCode = this.state.joinCode;
