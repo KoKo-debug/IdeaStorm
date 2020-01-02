@@ -31,8 +31,7 @@ class GroupListing extends React.Component{
               style={{
                background: `url(${appAcademy})`,
                backgroundSize: `cover`
-              }}>
-            
+              }}>            
             </div>
             <div className="gl-info-container">
               <h2>
@@ -41,15 +40,7 @@ class GroupListing extends React.Component{
               <p>
                 Members: {group.members.length}
               </p>
-            </div>
-              <div className="gl-info-container">
-                <h2>
-                  {group.name}
-                </h2>
-                <p>
-                 Members: {group.members.length}
-                </p>
-              </div>
+            </div>              
             <div className="gl-button-container">
               <button onClick={() => this.toggleBoardsDisplay()}
                 className="gl-button-item">
