@@ -9,7 +9,11 @@
   /* justify-content: flex-end; */
 }
 
-.gi-board-create-button{
-  height: 33%;
+.gi-board-create-button{  
   margin-top: 65px;
+  padding: 0px;
+}
+
+.create-board-plusicon{
+  max-width: 40px;
 }
