@@ -1,4 +1,5 @@
 import React from "react";
+import BoardListing from "./group_boards";
 
 class GroupListing extends React.Component{
   constructor(props){
@@ -50,7 +51,7 @@ class GroupListing extends React.Component{
         </div>
 
         <div className={`${this.state.status}`}>
-          Shown
+          <BoardListing boards={group.boards}/>
         </div>
 
       </div>
