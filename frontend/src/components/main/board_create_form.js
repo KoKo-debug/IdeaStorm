@@ -13,6 +13,14 @@ class BoardCreateForm extends React.Component{
       hoverText: false
     };
   this.buttonText = this.buttonText.bind(this);
+  this.toggleState = this.toggleState.bind(this);
+  }
+
+  toggleState(){
+    
+    this.setState(prevState => ({
+      hoverText: !prevState.hoverText
+    }));
   }
 
   buttonText(){
@@ -37,6 +45,8 @@ class BoardCreateForm extends React.Component{
     return(
       <div className="gi-board-button-container">
         <button className="gi-board-create-button">
+        {/* onMouseOver={()=>this.toggleState()}
+        onMouseOut={()=>this.toggleState()}> */}
           { this.buttonText() }           
         </button>
       </div>
