@@ -43,6 +43,7 @@ router.get('/test', (req, res) => {
 
 router.get('/user/:user_id', (req, res) => {
     Group.find({ creator: req.params.user_id })
+        .populate('members')
         .populate("boards")
         .sort({ date: -1 })
         .then(groups => res.json(groups))
@@ -87,6 +88,7 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
                           then(() => {
                             Group.findOne({ joinCode: req.body.joinCode })
                               .populate('members')
+                              .populate('boards')
                               .then(group => {
                                   res.json(group);
                               })
