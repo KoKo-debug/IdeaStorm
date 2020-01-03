@@ -6,17 +6,17 @@
 .gi-board-button-container{
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
+  justify-content: flex-end;
 }
 
 .gi-board-create-button{  
   margin-top: 65px;
   padding: 0px;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
+  border-radius: 50%;
+  margin-bottom: 30px;
 }
 
 .create-board-plusicon{
   max-width: 40px;
+  border-radius: 50%;
 }

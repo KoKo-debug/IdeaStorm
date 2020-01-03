@@ -84,7 +84,7 @@
   margin-bottom: 15px;
   border-radius: 15%;
   border: 3px double #6ea760;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 4px 4px 4px black;
   background: linear-gradient(
     #3f87a6, #ebf8e1, #f69d3c
   )
@@ -96,7 +96,7 @@
 
 .gl-button-item:hover{
   cursor: pointer;
-
+  box-shadow: 2px 2px 2px black;
   border: 3px double rgb(208, 202, 22);
 }
 
