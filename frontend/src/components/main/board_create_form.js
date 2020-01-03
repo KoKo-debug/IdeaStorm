@@ -10,57 +10,40 @@ class BoardCreateForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hoverText: false
-    };
-  // this.buttonText = this.buttonText.bind(this);
+      modalActive: false
+    };  
   this.toggleState = this.toggleState.bind(this);
   }
 
-  toggleState(){
-    
+  toggleState(){      
     this.setState(prevState => ({
-      hoverText: !prevState.hoverText
+      modalActive: !prevState.modalActive
     }));
   }
 
   renderCreateForm(){
-    return(
-      <div id="board-create-modal-container">
-        TEST
-      </div>
-    )
+    if(this.state.modalActive){
+      return (
+        <div id="board-create-modal-container"
+          tabIndex="0"
+        onBlur={()=>this.toggleState()}>
+          TEST
+        </div>
+      )
+    } else {      
+      return null;
+    }    
   }
-
-  // buttonText(){
-  //   if(this.state.hoverText){
-  //     return(
-  //       <div>
-  //         Create<br />
-  //         New<br />
-  //         Board
-  //       </div> 
-  //     )
-  //   } else {
-  //     return(
-  //       <div>
-  //         <img src={plusIcon} className="create-board-plusicon"></img>
-  //       </div>
-  //     )
-  //   }    
-  // }
 
   createButton(){
     return(
       <div className="gi-board-button-container">
-        <button className="gi-board-create-button">
-        {/* onMouseOver={()=>this.toggleState()}
-        onMouseOut={()=>this.toggleState()}> */}
-          <div>
-            <img src={plusIcon} className="create-board-plusicon"></img>
-          </div>           
+        <button className="gi-board-create-button" 
+                onClick={()=> this.toggleState()}> 
+          <img src={plusIcon} className="create-board-plusicon"></img>                
         </button>
-      </div>
-      
+        { this.renderCreateForm() }
+      </div>      
     )
   }
 

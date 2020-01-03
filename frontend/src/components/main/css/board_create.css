@@ -7,16 +7,27 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
 }
 
-.gi-board-create-button{  
-  margin-top: 65px;
+.gi-board-create-button{    
   padding: 0px;
   border-radius: 50%;
-  margin-bottom: 30px;
+  align-self: center;  
+}
+
+.gi-board-create-button:focus{
+  outline: 0;
 }
 
 .create-board-plusicon{
   max-width: 40px;
   border-radius: 50%;
+}
+
+#board-create-modal-container{
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background: white;
 }
