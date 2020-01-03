@@ -45,13 +45,22 @@
   height: 80vh;
 }
 
+@keyframes mytest{
+  0%{
+    transform: scaleY(0);
+  }
+  100%{
+    transform: scaleY(1);
+  }
+}
+
 
 .group-listing-container{
   display: flex;
   flex-direction: column;
-  margin: 0px 45px 30px;
+  
+  margin: 0px 0px 30px 45px;
   background-color: transparent;
-  opacity: 90%;
 }
 
 .group-listing-banner{
@@ -65,19 +74,24 @@
 }
 
 .gl-info-container{
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 5px;
+
 }
 
 .gl-button-container{
   align-self: center;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
   
 }
 
 .gl-button-item{
   padding: 8px;
+  margin-bottom: 15px;
   border-radius: 15%;
   border: 5px double yellow;
 }
@@ -88,16 +102,20 @@
 }
 
 .group-boards-listing-hidden{
-  display: none;
+  /* animation: reverse mytest; */
+  display: none;  
 }
 
-.group-boards-listing-shown{
+.group-boards-listing-shown{  
   border: 2px solid black;
   padding: 15px;
   border-bottom-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  height: 100px;
+  border-bottom-right-radius: 25%;  
   background-color: lightskyblue;
+  animation: mytest .4s;
+  /* transition:flex 1.0s ease-out;
+  flex: 1;
+  height: auto; */
 }
 
 .group-board-container{
@@ -114,5 +132,13 @@
   padding: 5px;
   border: 1px solid black;
   margin-right: 10px;
+  border-radius: 25%;
 }
 
+.group-create-board-hidden{
+  display: none;
+}
+
+/* .group-create-board-shown{
+
+} */

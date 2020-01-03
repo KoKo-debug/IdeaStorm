@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { format } from 'url';
+// import { format } from 'url';
 import './css/join_create_form.css';
 
 class JoinCreateForm extends React.Component {
@@ -24,8 +24,6 @@ class JoinCreateForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-
     }
 
 
@@ -94,7 +92,7 @@ class JoinCreateForm extends React.Component {
                       onChange={this.update("name")}
                       placeholder="Name of group"
                     />
-                    <i class="fab fa-mixcloud"></i>
+                    <i className="fab fa-mixcloud"></i>
                   </span>
 
                   <span className="join-create-span">

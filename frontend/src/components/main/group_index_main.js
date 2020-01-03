@@ -3,11 +3,10 @@ import './css/group_index.css';
 import './css/join_create_form.css';
 import MyGroups from "./mygroups_section";
 import JoinCreateForm from './join_create_form';
-import backgroundIMG from "./background1.jpg";
-import clouds from './clouds.png';
+import backgroundIMG from "./main_images/background1.jpg";
+import clouds from './main_images/clouds.png';
 
-class GroupIndexMain extends React.Component {
-  debugger;
+class GroupIndexMain extends React.Component {  
   constructor(props){
     super(props);
     this.state = {

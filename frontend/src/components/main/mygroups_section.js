@@ -4,9 +4,9 @@ import GroupListing from "./group_listing";
 // import { getUserGroups } from "../../util/groups_util";
 import { fetchUserGroups } from "../../actions/groups_actions";
 import "./css/mygroups.css";
-import backgroundIMG from "./background1.jpg";
-import indexBackground from './index-bg1.jpg';
-import headerCloud from './header-clouds.jpg';
+import backgroundIMG from "./main_images/background1.jpg";
+import indexBackground from './main_images/index-bg1.jpg';
+import headerCloud from './main_images/header-clouds.jpg';
 
 class MyGroupIndex extends React.Component{
   constructor(props){
@@ -21,9 +21,13 @@ class MyGroupIndex extends React.Component{
     let propGroups = Object.values(this.props.groups);
     
     return propGroups.map((group, idx) => {      
+      const object = {
+        group: group,
+        currentUser: this.props.currentUser,
+      };
       return(
         <div key={idx}>
-          <GroupListing group={group}/>
+          <GroupListing object={object}/>
         </div>        
       );
     })
