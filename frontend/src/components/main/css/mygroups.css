@@ -80,6 +80,7 @@
 }
 
 .gl-button-item{
+  transition: all .5s;
   padding: 8px;
   margin-bottom: 15px;
   border-radius: 15%;
@@ -91,6 +92,7 @@
    #ebf8e1,
    #3f87a6
   );
+
 }
 
 .gl-button-item:focus{
@@ -98,6 +100,7 @@
 }
 
 .gl-button-item:hover{
+  transition: all .5s;
   cursor: pointer;
   box-shadow: 2px 2px 2px black;
   border: 3px double rgb(208, 202, 22);
@@ -143,10 +146,18 @@
 }
 
 .board-list-element{
+  transition: all .5s;
   padding: 5px;
   border: 1px solid black;
   margin-right: 10px;
   border-radius: 25%;
+  box-shadow: 4px 4px 4px;
+}
+
+.board-list-element:hover{
+  transition: all .5s;
+  box-shadow: 2px 2px 2px;
+  cursor: pointer;
 }
 
 .group-create-board-hidden{
