@@ -45,16 +45,6 @@
   height: 80vh;
 }
 
-@keyframes mytest{
-  0%{
-    transform: scaleY(0);
-  }
-  100%{
-    transform: scaleY(1);
-  }
-}
-
-
 .group-listing-container{
   display: flex;
   flex-direction: column;
@@ -93,17 +83,35 @@
   padding: 8px;
   margin-bottom: 15px;
   border-radius: 15%;
-  border: 5px double yellow;
+  border: 3px double #6ea760;
+  box-shadow: 5px 5px 5px black;
+  background: linear-gradient(
+    #3f87a6, #ebf8e1, #f69d3c
+  )
+}
+
+.gl-button-item:focus{
+  outline: 0;
 }
 
 .gl-button-item:hover{
   cursor: pointer;
-  border: 5px double blue;
+
+  border: 3px double rgb(208, 202, 22);
 }
 
 .group-boards-listing-hidden{
   /* animation: reverse mytest; */
   display: none;  
+}
+
+@keyframes expandBoards{
+  0%{
+    transform: scaleY(0);
+  }
+  100%{
+    transform: scaleY(1);
+  }
 }
 
 .group-boards-listing-shown{  
@@ -112,10 +120,7 @@
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;  
   background-color: lightskyblue;
-  animation: mytest .4s;
-  /* transition:flex 1.0s ease-out;
-  flex: 1;
-  height: auto; */
+  animation: expandBoards .4s;
 }
 
 .group-board-container{
