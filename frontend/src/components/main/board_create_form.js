@@ -12,7 +12,7 @@ class BoardCreateForm extends React.Component{
     this.state = {
       hoverText: false
     };
-  this.buttonText = this.buttonText.bind(this);
+  // this.buttonText = this.buttonText.bind(this);
   this.toggleState = this.toggleState.bind(this);
   }
 
@@ -23,23 +23,31 @@ class BoardCreateForm extends React.Component{
     }));
   }
 
-  buttonText(){
-    if(this.state.hoverText){
-      return(
-        <div>
-          Create<br />
-          New<br />
-          Board
-        </div> 
-      )
-    } else {
-      return(
-        <div>
-          <img src={plusIcon} className="create-board-plusicon"></img>
-        </div>
-      )
-    }    
+  renderCreateForm(){
+    return(
+      <div id="board-create-modal-container">
+        TEST
+      </div>
+    )
   }
+
+  // buttonText(){
+  //   if(this.state.hoverText){
+  //     return(
+  //       <div>
+  //         Create<br />
+  //         New<br />
+  //         Board
+  //       </div> 
+  //     )
+  //   } else {
+  //     return(
+  //       <div>
+  //         <img src={plusIcon} className="create-board-plusicon"></img>
+  //       </div>
+  //     )
+  //   }    
+  // }
 
   createButton(){
     return(
@@ -47,7 +55,9 @@ class BoardCreateForm extends React.Component{
         <button className="gi-board-create-button">
         {/* onMouseOver={()=>this.toggleState()}
         onMouseOut={()=>this.toggleState()}> */}
-          { this.buttonText() }           
+          <div>
+            <img src={plusIcon} className="create-board-plusicon"></img>
+          </div>           
         </button>
       </div>
       
