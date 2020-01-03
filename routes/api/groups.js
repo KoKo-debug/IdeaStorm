@@ -71,6 +71,12 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
               if (!group) {
                   return res.status(404).json({ nogroupsfound: 'No groups found' });
               }
+              if (group.members.includes(req.body.userId)) {
+                  return res.status(400).json({ cannotjoingroup: 'User already joined group' })
+              }
+              if (group.creator === req.body.userId) {
+                  return res.status(400).json({ cannotjoingroup: 'Creator cannot join group' })
+              }
               group.members.push(req.body.userId);
               group.save().
                 then(group => {
