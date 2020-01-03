@@ -92,7 +92,7 @@ class JoinCreateForm extends React.Component {
                       onChange={this.update("name")}
                       placeholder="Name of group"
                     />
-                    <i class="fab fa-mixcloud"></i>
+                    <i className="fab fa-mixcloud"></i>
                   </span>
 
                   <span className="join-create-span">
