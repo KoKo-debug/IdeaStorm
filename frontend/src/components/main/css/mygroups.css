@@ -47,13 +47,10 @@
 
 @keyframes mytest{
   0%{
-    background-color: red;
-  }
-  50%{
-    background-color: orange;
+    transform: scaleY(0);
   }
   100%{
-    background-color: white;
+    transform: scaleY(1);
   }
 }
 
@@ -106,15 +103,20 @@
 }
 
 .group-boards-listing-hidden{
-  display: none;
+  /* animation: reverse mytest; */
+  display: none;  
 }
 
-.group-boards-listing-shown{
+.group-boards-listing-shown{  
   border: 2px solid black;
   padding: 15px;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;  
   background-color: lightskyblue;
+  animation: mytest .4s;
+  /* transition:flex 1.0s ease-out;
+  flex: 1;
+  height: auto; */
 }
 
 .group-board-container{
