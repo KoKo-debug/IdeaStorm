@@ -1,0 +1,41 @@
+
+.welcome-main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-idea-container {
+    margin-top: 5%;
+}
+
+.collaborate-container {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.new-idea {
+    margin-left: 5%;
+    max-width: 50%;
+    font-size: 70px;
+}
+
+.collaborate {
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 70px;
+    margin-right: 5%;
+}
+
+.idea-img {
+    position: absolute;
+    z-index: -1;
+    max-width: 800px;
+    border-radius: 30%;
+    top: 0%;
+    right: 0px;
+}
+
