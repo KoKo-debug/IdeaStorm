@@ -84,10 +84,13 @@
   margin-bottom: 15px;
   border-radius: 15%;
   border: 3px double #6ea760;
-  box-shadow: 4px 4px 4px black;
+  box-shadow: 4px 4px 4px black;  
   background: linear-gradient(
-    #3f87a6, #ebf8e1, #f69d3c
-  )
+    .45turn,
+   #f69d3c, 
+   #ebf8e1,
+   #3f87a6
+  );
 }
 
 .gl-button-item:focus{
@@ -119,7 +122,13 @@
   padding: 15px;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;  
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
+  background: linear-gradient(
+    .90turn,
+   #f69d3c, 
+   #ebf8e1,
+   rgb(78,179,239)
+  );
   animation: expandBoards .4s;
 }
 
