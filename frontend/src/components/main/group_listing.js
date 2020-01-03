@@ -2,7 +2,7 @@ import React from "react";
 import BoardListing from "./group_boards";
 import BoardCreateForm from "./board_create_form";
 import "./css/board_create.css";
-import appAcademy from './app_academy.jpg';
+import appAcademy from './main_images/app_academy.jpg';
 
 class GroupListing extends React.Component{
   constructor(props){
