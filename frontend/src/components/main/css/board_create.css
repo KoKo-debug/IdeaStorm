@@ -9,11 +9,10 @@
   justify-content: flex-end;
 }
 
-.gi-board-create-button{  
-  margin-top: 65px;
+.gi-board-create-button{    
   padding: 0px;
   border-radius: 50%;
-  margin-bottom: 30px;
+  align-self: center;
 }
 
 .create-board-plusicon{

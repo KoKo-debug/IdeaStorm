@@ -53,13 +53,13 @@ class GroupListing extends React.Component{
           <div className={`${this.state.status}`}>
             <BoardListing boards={group.boards} />
           </div>
-          
+          <BoardCreateForm object={{
+            group: group,
+            user: this.props.object.currentUser
+          }} />
 
         </div>
-        <BoardCreateForm object={{
-          group: group,
-          user: this.props.object.currentUser
-        }} />
+        
       </div>
       
       
