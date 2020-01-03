@@ -42,10 +42,16 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
-    Group.find({ creator: req.params.user_id })
-        .populate("boards")
-        .sort({ date: -1 })
-        .then(groups => res.json(groups))
+    User.findById(req.params.user_id)
+        .populate("joinedGroups")
+        .populate("createdGroups")
+        .then(user => {
+            let groups = [
+                ...user.joinedGroups,
+                ...user.createdGroups
+            ];
+            res.json(groups);
+        })
         .catch(err =>
             res.status(404).json({ nogroupsfound: 'No groups found from that user' }
             )

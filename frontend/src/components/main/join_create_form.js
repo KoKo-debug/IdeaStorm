@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { format } from 'url';
 import './css/join_create_form.css';
+import { joinUserGroup } from '../../actions/groups_actions';
+
 
 class JoinCreateForm extends React.Component {
     constructor(props) {
@@ -13,7 +15,7 @@ class JoinCreateForm extends React.Component {
             errors: {}
         };
         
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleJoinSubmit = this.handleJoinSubmit.bind(this);
     }
 
     update(field) {
@@ -22,8 +24,12 @@ class JoinCreateForm extends React.Component {
         });
     }
 
-    handleSubmit(e) {
+    handleJoinSubmit(e) {
         e.preventDefault();
+        let userId = this.props.currentUser.id;
+        let joinCode = this.state.joinCode;
+        this.props.joinUserGroup(userId, joinCode);
+
     }
 
 
@@ -45,7 +51,7 @@ class JoinCreateForm extends React.Component {
         if (status === "join") {
             return (
               <section className="join-form-container">
-                <form className="join-form" onSubmit={this.handleSubmit}>
+                <form className="join-form" onSubmit={this.handleJoinSubmit}>
                   <h2 className="join-form-header">Join a group!</h2>
 
                   <h3 className="join-create-text">
@@ -72,6 +78,7 @@ class JoinCreateForm extends React.Component {
                       value="submit"
                     />
                   </span>
+                  {this.renderErrors()}
                 </form>
               </section>
             );
@@ -120,10 +127,10 @@ const msp = ({session}) => {
 
 }
 
-// const mdp = dispatch => {
-//     return({
-//         joinGroup: userId => dispatch()
-//     })
-// }
+const mdp = dispatch => {
+    return({
+        joinUserGroup: (userId, joinCode) => dispatch(joinUserGroup(userId, joinCode))
+    })
+}
 
-export default connect(msp)(JoinCreateForm);
+export default connect(msp, mdp)(JoinCreateForm);
