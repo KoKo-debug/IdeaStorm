@@ -57,7 +57,7 @@ router.post('/', passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const newGroup = new Group({
             name: req.body.name,
-            creator: req.user.id,
+            creator: req.body.userId,
             joinCode: generateJoinCode()
         })
         newGroup.save().then(group => {
