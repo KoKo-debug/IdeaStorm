@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const BoardSchema = new Schema({
+const IdeaSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -10,19 +10,19 @@ const BoardSchema = new Schema({
         type: String,
         required: true
     },
-    group: {
-        type: Schema.Types.ObjectId, 
-        ref: 'Group'
+    votes: {
+        type: Number,
+        default: 0
     },
-    ideas: [{
+    board: {
         type: Schema.Types.ObjectId,
-        ref: 'Idea'
-    }],
+        ref: 'Board'
+    },
     date: {
         type: Date,
         default: Date.now
     }
 });
 
-const Board = mongoose.model('Board', BoardSchema);
-module.exports = Board;
+const Idea = mongoose.model('Idea', IdeaSchema);
+module.exports = Idea;

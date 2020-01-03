@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const db = require("./conf/keys").mongoURI;
 const users = require("./routes/api/users");
 const groups = require("./routes/api/groups");
+const boards = require("./routes/api/boards");
+const ideas = require("./routes/api/ideas");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -37,9 +39,12 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/groups", groups);
+app.use("/api/boards", boards);
+app.use("/api/ideas", ideas);
 
 const port = process.env.PORT || 5000;
 
+// for testing
 app.get('/', (req, res) => {
     Group.findOne({ name: 'test group 003' })
         .then(group => {

@@ -43,6 +43,7 @@ router.get('/test', (req, res) => {
 
 router.get('/user/:user_id', (req, res) => {
     Group.find({ creator: req.params.user_id })
+        .populate('members')
         .populate("boards")
         .sort({ date: -1 })
         .then(groups => res.json(groups))
@@ -56,7 +57,7 @@ router.post('/', passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const newGroup = new Group({
             name: req.body.name,
-            creator: req.user.id,
+            creator: req.body.userId,
             joinCode: generateJoinCode()
         })
         newGroup.save().then(group => {
@@ -71,6 +72,12 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
               if (!group) {
                   return res.status(404).json({ nogroupsfound: 'No groups found' });
               }
+              if (group.members.includes(req.body.userId)) {
+                  return res.status(400).json({ cannotjoingroup: 'User already joined group' })
+              }
+              if (group.creator === req.body.userId) {
+                  return res.status(400).json({ cannotjoingroup: 'Creator cannot join group' })
+              }
               group.members.push(req.body.userId);
               group.save().
                 then(group => {
@@ -81,6 +88,7 @@ router.post('/join', passport.authenticate('jwt', { session: false }),
                           then(() => {
                             Group.findOne({ joinCode: req.body.joinCode })
                               .populate('members')
+                              .populate('boards')
                               .then(group => {
                                   res.json(group);
                               })
